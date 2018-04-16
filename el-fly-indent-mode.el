@@ -24,7 +24,6 @@
 ;;; Commentary:
 
 ;; This minor mode indents Emacs Lisp code on the fly.
-;; Put (el-fly-indent-init) in your ~/.emacs
 
 ;; For detailed explanations and more examples see the homepage:
 ;; https://github.com/jiahaowork/el-fly-indent-mode.el
@@ -77,6 +76,8 @@ LENGTH not used"
 (define-minor-mode el-fly-indent-mode
   "Minor mode."
   :init-value nil)
+
+(el-fly-indent-init)
 
 (provide 'el-fly-indent-mode)
 
