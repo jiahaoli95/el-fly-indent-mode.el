@@ -65,6 +65,7 @@ LENGTH not used"
 	(1+ end)
       (point-max))))
 
+;;;###autoload
 (defun el-fly-indent-init ()
   "Initialization."
   (add-to-list 'before-change-functions 'el-fly-indent-before-change)
@@ -73,6 +74,7 @@ LENGTH not used"
   )
 
 (defvar el-fly-indent-mode-map (make-sparse-keymap))
+;;;###autoload
 (define-minor-mode el-fly-indent-mode
   "Minor mode."
   :init-value nil)
