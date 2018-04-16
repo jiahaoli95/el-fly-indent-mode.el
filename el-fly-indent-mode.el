@@ -70,7 +70,7 @@ LENGTH not used"
   "Initialization."
   (add-to-list 'before-change-functions 'el-fly-indent-before-change)
   (add-to-list 'after-change-functions 'el-fly-indent-after-change)
-  (add-hook 'elisp-mode-hook 'el-fly-indent-mode)
+  (add-hook 'emacs-lisp-mode-hook #'el-fly-indent-mode)
   )
 
 (defvar el-fly-indent-mode-map (make-sparse-keymap))
