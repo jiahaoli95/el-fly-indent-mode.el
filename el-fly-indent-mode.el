@@ -79,8 +79,6 @@ LENGTH not used"
   "Minor mode."
   :init-value nil)
 
-(el-fly-indent-init)
-
 (provide 'el-fly-indent-mode)
 
 ;;; el-fly-indent-mode.el ends here
