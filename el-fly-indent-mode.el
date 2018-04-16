@@ -50,6 +50,7 @@ LENGTH not used"
     (let ((string (buffer-substring begin end)))
       (when
 	  (or
+	   (string-match-p "\\W" (buffer-substring (1- begin) begin))
 	   (string-match-p "[()]" string)
 	   (string-match-p "([ \f\t\n\r\v]*\\w*\\'" (buffer-substring (point-min) begin))
 	   el-fly-indent-flag)
