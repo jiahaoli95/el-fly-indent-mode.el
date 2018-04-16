@@ -51,7 +51,7 @@ LENGTH not used"
       (when
 	  (or
 	   (string-match-p "[()]" string)
-	   (string-match-p "([ \f\t\n\r\v]*\\'" (buffer-substring (point-min) begin))
+	   (string-match-p "([ \f\t\n\r\v]*\\w*\\'" (buffer-substring (point-min) begin))
 	   el-fly-indent-flag)
 	(indent-region begin (el-fly-indent-region-end begin))
 	(setq el-fly-indent-flag nil)))))
