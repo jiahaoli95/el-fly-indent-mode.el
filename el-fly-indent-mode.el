@@ -25,7 +25,7 @@
 
 ;; This minor mode indents Emacs Lisp code on the fly.
 ;; After installation, add the following piece to you ~/.emacs
-;; (el-fly-indent-init)
+;; (add-hook 'emacs-lisp-mode-hook 'el-fly-indent-mode)
 
 ;; For detailed explanations and more examples see the homepage:
 ;; https://github.com/jiahaowork/el-fly-indent-mode.el
@@ -47,6 +47,7 @@
   "Monitor text between BEGIN and END after any change.
 LENGTH not used"
   (when el-fly-indent-mode
+    (message "after change")
     (let ((string (buffer-substring begin end)))
       (when
 	  (or
@@ -68,19 +69,20 @@ LENGTH not used"
 	(1+ end)
       (point-max))))
 
-;;;###autoload
-(defun el-fly-indent-init ()
-  "Initialization."
-  (add-to-list 'before-change-functions 'el-fly-indent-before-change)
-  (add-to-list 'after-change-functions 'el-fly-indent-after-change)
-  (add-hook 'emacs-lisp-mode-hook #'el-fly-indent-mode)
-  )
-
 (defvar el-fly-indent-mode-map (make-sparse-keymap))
 ;;;###autoload
 (define-minor-mode el-fly-indent-mode
   "Minor mode."
-  :init-value nil)
+  :init-value nil
+  :global nil
+  (if el-fly-indent-mode
+      (progn
+        (make-local-variable 'before-change-functions)
+        (make-local-variable 'after-change-functions)
+        (push 'el-fly-indent-before-change before-change-functions)
+        (push 'el-fly-indent-after-change after-change-functions))
+    (setq before-change-functions (delq 'el-fly-indent-before-change before-change-functions)
+          after-change-functions (delq 'el-fly-indent-after-change after-change-functions))))
 
 (provide 'el-fly-indent-mode)
 
