@@ -1,8 +1,8 @@
-# el-fly-indent-mode.el
+# el-fly-indent-mode.el [![Melpa Status](http://melpa.milkbox.net/packages/el-fly-indent-mode-badge.svg)](http://melpa.milkbox.net/#/el-fly-indent-mode)
 Indent Emacs Lisp on the fly
 
 ## Setup
-Install the package and add `(el-fly-indent-init)` in you `~/.emacs`.
+Install the package from MELPA and add `(el-fly-indent-init)` in you `~/.emacs`.
 
 ## Usage
 This minor mode toggles on along with elisp-mode and indents on the fly when you edit the code. No special key strokes needed.
