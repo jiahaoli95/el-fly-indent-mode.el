@@ -1,4 +1,4 @@
-# el-fly-indent-mode.el [![Melpa Status](http://melpa.milkbox.net/packages/el-fly-indent-mode-badge.svg)](http://melpa.milkbox.net/#/el-fly-indent-mode)
+# el-fly-indent-mode.el [![MELPA](https://melpa.org/packages/el-fly-indent-mode-badge.svg)](https://melpa.org/#/el-fly-indent-mode)
 Indent Emacs Lisp on the fly
 
 ## Setup
